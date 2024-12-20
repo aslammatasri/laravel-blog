@@ -1,5 +1,5 @@
 
-    <div class="sidebar bg-light bg-white shadow-sm text-black p-3" style="width: 250px; height: 100vh; position: fixed;">
+    <div class="sidebar bg-light bg-white shadow-sm text-black p-3" style="width: 250px; height: 100%; position: absolute;">
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a href="{{ url('/') }}" class="nav-link text-black">Home</a>

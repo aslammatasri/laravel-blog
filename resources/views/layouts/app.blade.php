@@ -73,7 +73,9 @@
                 </div>
             </div>
         </nav>
-        <x-sidebar />
+        @if (!in_array(Route::currentRouteName(), ['login', 'register', 'password.request', 'password.reset']))
+                <x-sidebar />
+            @endif
         <main class="py-4">
             @yield('content')
         </main>
