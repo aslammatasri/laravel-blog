@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,5 +31,6 @@ Route::get('users/{id}/edit', [PostController::class, 'edit'])->name('posts.edit
 Route::put('/users/{id}', [PostController::class, 'update'])->name('posts.update');
 Route::delete('/users/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
 
-
+//UserController routes
+Route::resource('users' , UserController::class);
 // Route::resource('posts', PostController::class); 
