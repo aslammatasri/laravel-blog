@@ -26,7 +26,7 @@
                                 <th scope="row">{{ $user->id }}</th>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email}}</td>
-                                <td>{{ $user->created_at}}</td>
+                                <td>{{ $user->formatted_created_at}}</td>
                                 <td>
                                     <form action="{{ route('users.edit', $user->id) }}" method="POST" style="display:inline;">
                                         <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}" role="button">Edit</a>
