@@ -49,8 +49,9 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
+    //show date in  "December 21, 2024, 1:45 PM"
     public function getFormattedCreatedAtAttribute()
     {
-        return $this->created_at->format('F j, Y, g:i A'); // Example: "December 21, 2024, 1:45 PM"
+        return $this->created_at->format('F j, Y, g:i A'); 
     }
 }

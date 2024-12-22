@@ -11,19 +11,19 @@ class PostController extends Controller
     {
         $posts = Post::paginate(5);
 
-        return view('home', compact('posts'));
+        return view('post.index', compact('posts'));
     }
 
     public function create()
     {
 
-        return view('create');
+        return view('post.create');
     }
 
     public function edit($id)
     {
         $posts = Post::findOrFail($id);
-        return view('edit', compact('posts'));
+        return view('post.edit', compact('posts'));
     }
 
     public function store(Request $request)
@@ -41,7 +41,7 @@ class PostController extends Controller
             'status' => $request->input('status'),
         ]);
 
-        return redirect()->route('home')->with('success', 'Post created successfully');
+        return redirect()->route('posts.index')->with('success', 'Post created successfully');
     }
 
     public function update(Request $request, $id)
@@ -63,7 +63,7 @@ class PostController extends Controller
         //save
         $posts->save();
 
-        return redirect()->route('home')->with('success', 'Post updated successfully');
+        return redirect()->route('posts.index')->with('success', 'Post updated successfully');
 
     }
 
@@ -72,7 +72,7 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $post->delete();
 
-        return redirect()->route('home')->with('success', 'Post deleted successfully');
+        return redirect()->route('posts.index')->with('success', 'Post deleted successfully');
 
     }
 }

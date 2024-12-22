@@ -1,10 +1,7 @@
 <div class="sidebar bg-light bg-white shadow-sm text-black p-3" style="width: 250px; height: 100%; position: absolute;">
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a href="{{ url('/home') }}" class="nav-link text-black">Home</a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ url('/create') }}" class="nav-link text-black">Create Post</a>
+            <a href="{{ route('posts.index') }}" class="nav-link text-black">List of Post</a>
         </li>
         @guest
 

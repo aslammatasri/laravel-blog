@@ -14,11 +14,30 @@ class UserController extends Controller
         return view('user.list-user', compact('users'));
     }
 
-    public function create()
+    public function edit($id)
     {
-
-        return view('create');
+        $user = User::findOrFail($id);
+        return view('user.edit', compact('user'));
     }
 
+    public function update(Request $request, $id)
+    {
+        $request->validate(
+            [
+                'name' => 'required | string | max:255',
+                'email' => 'required | string | unique:users,email,' . $id,
+            ]
+        );
 
+        $users = User::findOrFail($id);
+
+        $users->name = $request->input('name');
+        $users->email = $request->input('email');
+    
+        $users->save();
+
+
+        return redirect()->route('users.index')->with('success', 'User updated successfully');
+
+    }
 }

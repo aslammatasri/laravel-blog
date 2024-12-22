@@ -9,7 +9,7 @@
                 <div class="card-header d-flex justify-content-between align-items-center">{{ __('Create a Post') }} </div>
                 <div class="card-body">
                     <!-- form to create a post -->
-                    <form action="{{ route('posts.store') }}" method="POST">
+                    <form action="{{ route('posts.create') }}" method="POST">
                     @csrf
                         <div class="mb-3">
                             <label for="postTitle" class="form-label">Title</label>
