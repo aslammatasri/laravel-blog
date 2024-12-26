@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4964aa85cfd815de4fbd444f2b577d3b",
+    "content-hash": "6809534628f8ef34d4cded798d6fc20e",
     "packages": [
         {
             "name": "brick/math",
@@ -5538,6 +5538,45 @@
             "time": "2023-12-08T13:03:43+00:00"
         },
         {
+            "name": "twbs/bootstrap-icons",
+            "version": "v1.11.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/icons.git",
+                "reference": "8d88686c03c3768a2d82ba4f20c3c4e1b100fa29"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/icons/zipball/8d88686c03c3768a2d82ba4f20c3c4e1b100fa29",
+                "reference": "8d88686c03c3768a2d82ba4f20c3c4e1b100fa29",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "Official open source SVG icon library for Bootstrap",
+            "homepage": "https://icons.getbootstrap.com/",
+            "keywords": [
+                "bootstrap",
+                "icon font",
+                "icons",
+                "svg"
+            ],
+            "support": {
+                "issues": "https://github.com/twbs/icons/issues",
+                "source": "https://github.com/twbs/icons/tree/v1.11.3"
+            },
+            "time": "2024-01-03T15:44:45+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v5.6.1",
             "source": {
@@ -8143,6 +8182,78 @@
                 }
             ],
             "time": "2024-06-12T15:01:18+00:00"
+        },
+        {
+            "name": "spatie/laravel-web-tinker",
+            "version": "1.8.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-web-tinker.git",
+                "reference": "0ac5c8a35f86772aa965598a89f76236281490d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-web-tinker/zipball/0ac5c8a35f86772aa965598a89f76236281490d7",
+                "reference": "0ac5c8a35f86772aa965598a89f76236281490d7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cookie": "^5.8|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/session": "^5.8|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/support": "^5.8|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "laravel/tinker": "^1.0|^2.0",
+                "php": "^7.2|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.8|^4.0|^5.0|^6.0|^7.0|^8.0",
+                "phpunit/phpunit": "^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\WebTinker\\WebTinkerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\WebTinker\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Artisan Tinker in your browser",
+            "homepage": "https://github.com/spatie/laravel-web-tinker",
+            "keywords": [
+                "Tinker",
+                "debug",
+                "development",
+                "laravel",
+                "spatie",
+                "web-tinker"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-web-tinker/issues",
+                "source": "https://github.com/spatie/laravel-web-tinker/tree/1.8.4"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2023-03-01T07:21:54+00:00"
         },
         {
             "name": "symfony/yaml",

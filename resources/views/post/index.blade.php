@@ -22,12 +22,14 @@
                             <a href="#" class="card-link">Read More</a>
                             <div class="">
                                 <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-secondary btn-sm">Edit</a>
+                                @if(auth()->user()->hasRole('admin'))
                                 <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i>
                                         Delete</button>
                                 </form>
+                                @endif
                             </div>
                         </div>
                     </div>

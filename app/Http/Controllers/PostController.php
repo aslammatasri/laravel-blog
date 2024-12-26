@@ -7,27 +7,43 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Post $post)
     {
-        $posts = Post::paginate(5);
+        $this->authorize('viewAny', $post);
 
+        if (auth()->user()->hasRole('admin')) {
+
+            $posts = Post::paginate(5);
+
+        } else {
+
+            $posts = Post::where('user_id', auth()->id())->paginate(5);
+
+        }
+        
         return view('post.index', compact('posts'));
     }
 
-    public function create()
+    public function create(Post $post)
     {
+        $this->authorize('create', $post);
 
         return view('post.create');
     }
 
     public function edit($id)
     {
+
         $posts = Post::findOrFail($id);
+        $this->authorize('update', $posts);
+
         return view('post.edit', compact('posts'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Post $post)
     {
+        $this->authorize('create', $post);
+
         $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
@@ -46,14 +62,15 @@ class PostController extends Controller
 
     public function update(Request $request, $id)
     {
+        $posts = Post::findOrFail($id);
+
+        $this->authorize('update', $posts);
+
         $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'status' => 'required|',
         ]);
-
-        //find by id
-        $posts = Post::findOrFail($id);
 
         //update
         $posts->title = $request->input('title');
@@ -64,15 +81,15 @@ class PostController extends Controller
         $posts->save();
 
         return redirect()->route('posts.index')->with('success', 'Post updated successfully');
-
     }
 
     public function destroy(Request $request, $id)
     {
+
         $post = Post::findOrFail($id);
+        $this->authorize('delete', $post);
         $post->delete();
 
         return redirect()->route('posts.index')->with('success', 'Post deleted successfully');
-
     }
 }
